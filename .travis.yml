@@ -29,7 +29,7 @@ jobs:
     - echo "Docker build ..."
     - docker build -t matthieured/app-backend .
     - echo "Docker login ..."
-    - docker login -u "$dockerid" "$dockerpassword"
+    - echo "$dockerpassword" | docker login -u "$dockerid" --password-stdin
     - echo "Docker push ..."
     - docker push matthieured/app-backend
     
@@ -40,7 +40,7 @@ jobs:
     - echo "Docker build ..."
     - docker build -t matthieured/app-frontend .
     - echo "Docker login ... $dockerid"
-    - docker login -u "$dockerid" "$dockerpassword"
+    - echo "$dockerpassword" | docker login -u "$dockerid" --password-stdin
     - echo "Docker push ..."
     - docker push matthieured/app-frontend
 
