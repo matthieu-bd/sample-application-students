@@ -25,15 +25,23 @@ jobs:
     - cd sample-application-backend
     script:
     - echo "Docker build ..."
+    - docker build -t matthieured/app-backend .
     - echo "Docker login ..."
+    - docker login -u "$docker-id" "$docker-password"
     - echo "Docker push ..."
+    - docker push matthieured/app-backend
+    
   - stage: Package
     before_script:
     - cd sample-application-frontend
     script:
     - echo "Docker build ..."
-    - echo "Docker login ..."
+    - docker build -t matthieured/app-frontend .
+    - echo "Docker login ... $docker-id"
+    - docker login -u "$docker-id" "$docker-password"
     - echo "Docker push ..."
+    - docker push matthieured/app-frontend
+
 cache:
   directories:
   - "$HOME/.m2/repository"
