@@ -29,7 +29,7 @@ jobs:
     - echo "Docker build ..."
     - docker build -t matthieured/app-backend .
     - echo "Docker login ..."
-    - docker login -u "$docker-id" "$docker-password"
+    - docker login -u "$dockerid" "$dockerpassword"
     - echo "Docker push ..."
     - docker push matthieured/app-backend
     
@@ -39,8 +39,8 @@ jobs:
     script:
     - echo "Docker build ..."
     - docker build -t matthieured/app-frontend .
-    - echo "Docker login ... $docker-id"
-    - docker login -u "$docker-id" "$docker-password"
+    - echo "Docker login ... $dockerid"
+    - docker login -u "$dockerid" "$dockerpassword"
     - echo "Docker push ..."
     - docker push matthieured/app-frontend
 
@@ -50,7 +50,3 @@ cache:
   - "$HOME/.npm"
 services:
 - docker
-env:
-  global:
-  - secure: OU3kcEQ+qPBVIN0Nr7VU+wcmFndr/TN5JcscN0Qca1kSaUQaXQhIbL4Q/lIZNoNAw2o6eNNzD4NJWv/dCCPSH9DGVhfIE2p0aDtyctJSlV00/ih0CtmJGpOfCqVEmZ5403nJBdMNbo6rEaICXA0ON2+gCDNl2U24SXQ73iQMH+xFS362B726e4Tx1x9EoctVN2c/WyFA+ky0Fi+a+Ehz0zWrbAN6jYlZwjqCOEXWiw5l2VSbSuBqQbNr1Ee4qlUQSfl45ntChoe1DSs9Xruo/nGAU2iKW+UQyvzMOd5kBh46ojT1psuTNuzy1Ho0T+RTWvjc1NxbWhqkCIcpnqPOO8niuV+MpHfntlJQFTgZ1qm7z7JYftadBL7MinVgfJE2ODalDRGufeo6AV+EHd43WZ4L1Vpl78aWt33gKO4KoLZR4W33Fy18kq74jcpXcEhyZSem+HE0Ixeg7EgIgQQ3J8zcWt4UKPf8oCEz07hxeFbwKs4E1xeT+93BteJg1c941PUTZato79rAUEnJ4m5/aTcuNKj3QWOPE0OuMza5pBw0H5M3RLKGm9abTkOa9auB+TOaVulylxm2B2usD4HGyB2IsSFSok9bbWKnv7tCLDD/LPRClKDLIbvIS+UVq595EgN8aSB2xcp2uZF+dE5G97XFkChEPw+I0hiJrb1WOE8=
-  - secure: Iz5BWz9NuZqcsvak7rSrlMDFXyFxEgNcY2xXRG6Rl4Qs3BhFQzcX4gL1hh4pFbEAQeUYYQDNgP9ZEP+1EXss6kjX1y3//HXM1H8oFdC4GDGTUicV6JgSMoYP5MMuhx+SZQAbiNFv2IM6fdEEIWwZDt1sH8rQGe1ao0YdG6k2gMiZ079S/niSGBXg9PWStVbceomSs+735gh6eoCglX7niFWW6UVOozrDyBAIQxFXyiLE9Ye5DJDImblCN4l1C1ktdJClco0XuIRvkdZL3e2IegJnrGdSFO/lXwVDsj29+VudaNfcfFW55dRZU+pRY3pq3RL+jnI3YSXDkDW7fD+CNK55T5p7zAclIDf9PuvYJTfKBs893bypLLh5GghmRDctB7KF2A11csCUMN1WEik6cZNTCt+7Tj/4RZj+AHzohPp+IFluKRH3AJYEAHtppnNKhTFWfnu92U175tzZgO9/EkrHkd/Xa8OOPRztht1ebM5Gu69anrzTjyJ0PPulbGfcIxUsNliHSGAelIo/pByHz2297U/2yE4hW/pSX869mePLilgGvm1rTH5XLGaxIhOetxrMmwbzd/sAWrvDkupaKUpZQr4FcG/BYUyZEdZ8mkQ0Z9y4dRxh3jRctN33JZB+4bd9Cy7ezdTn4emRHrukJvPybY2yv97FtsfOatE3JqQ=
