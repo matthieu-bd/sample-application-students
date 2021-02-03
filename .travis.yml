@@ -12,7 +12,9 @@ jobs:
     - cd sample-application-backend
     script:
     - echo "Maven build"
+    - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=matthieu-bd_sample-application-students
     - echo "Run test coverage and Quality Gate"
+    
   - stage: Build and Test
     language: node.js
     node_js: '12.20'
@@ -20,6 +22,9 @@ jobs:
     - cd sample-application-frontend
     script:
     - echo "NPM install and build"
+    - npm install
+    - npm run lint
+    - npm run test
     
     
   - stage: Package
@@ -50,3 +55,8 @@ cache:
   - "$HOME/.npm"
 services:
 - docker
+
+addons:
+  sonarcloud:
+    organization: "matthieu-bd"
+    token: "$SONARCLOUD_TOKEN"
