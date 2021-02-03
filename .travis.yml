@@ -20,6 +20,8 @@ jobs:
     - cd sample-application-frontend
     script:
     - echo "NPM install and build"
+    
+    
   - stage: Package
     before_script:
     - cd sample-application-backend
